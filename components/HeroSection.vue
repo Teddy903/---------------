@@ -13,7 +13,7 @@
         <!-- Content -->
         <div class="relative z-10 container mx-auto px-4 sm:px-6 text-center flex flex-col items-center">
             <div ref="title" class="space-y-2 md:space-y-4 mb-8 md:mb-12 w-full">
-                <h1 class="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tight leading-[0.9] md:leading-tight">
+                <h1 class="text-3xl sm:text-5xl md:text-7xl lg:text-9xl font-black uppercase tracking-tight leading-[0.95] md:leading-tight break-words">
                     <span class="block overflow-hidden">
                         <span class="inline-block">ДЕТЕЙЛИНГ</span>
                     </span>
@@ -26,7 +26,7 @@
                 </h1>
             </div>
 
-            <p ref="subtitle" class="text-lg sm:text-xl md:text-2xl text-text-secondary mb-8 md:mb-12 max-w-2xl mx-auto font-light px-2">
+            <p ref="subtitle" class="text-base sm:text-lg md:text-2xl text-text-secondary mb-8 md:mb-12 max-w-2xl mx-auto font-light px-2">
                 Профессиональный уход за вашим автомобилем с вниманием к каждой детали
             </p>
 

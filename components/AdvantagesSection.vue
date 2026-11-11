@@ -2,7 +2,7 @@
   <section class="py-16 md:py-24 lg:py-32 relative overflow-hidden bg-primary">
     <div class="container mx-auto px-4 md:px-6 relative z-10">
       <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-        <h2 ref="title" class="section-title text-3xl sm:text-5xl md:text-7xl lg:text-7xl mb-4">
+        <h2 ref="title" class="section-title text-3xl sm:text-5xl md:text-7xl lg:text-7xl mb-4 break-words">
           ПОЧЕМУ МЫ
         </h2>
         <p ref="subtitle" class="text-text-secondary text-sm md:text-base lg:text-lg">
@@ -14,7 +14,7 @@
         <div
           v-for="(item, idx) in advantages"
           :key="item.title"
-          class="advantage-card group p-7 md:p-8 rounded-2xl bg-primary-card border border-neutral-800 hover:border-white/40 transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-between"
+          class="advantage-card group p-5 sm:p-7 md:p-8 rounded-2xl bg-primary-card border border-neutral-800 hover:border-white/40 transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-between"
         >
           <div>
             <!-- Number / Icon Header -->

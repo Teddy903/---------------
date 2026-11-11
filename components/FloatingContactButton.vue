@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-40 select-none">
+  <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 z-40 select-none">
     <!-- Popover Menu -->
     <transition
       enter-active-class="transition duration-200 ease-out"
@@ -11,7 +11,7 @@
     >
       <div
         v-if="isOpen"
-        class="absolute bottom-16 right-0 mb-2 w-56 bg-primary-card/95 backdrop-blur-xl border border-white/20 rounded-2xl p-2.5 shadow-2xl shadow-black/80 space-y-1"
+        class="absolute bottom-16 right-0 mb-2 w-52 sm:w-56 bg-primary-card/95 backdrop-blur-xl border border-white/20 rounded-2xl p-2.5 shadow-2xl shadow-black/80 space-y-1"
       >
         <div class="px-3 py-1.5 text-[11px] font-semibold text-text-secondary uppercase tracking-wider border-b border-neutral-800 mb-1">
           Быстрая связь
@@ -76,7 +76,7 @@
       type="button"
       @click="isOpen = !isOpen"
       aria-label="Быстрая связь"
-      class="w-14 h-14 rounded-full bg-white text-black shadow-xl shadow-white/10 flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-300 relative group cursor-pointer"
+      class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-black shadow-xl shadow-white/10 flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-300 relative group cursor-pointer"
     >
       <!-- Online Ping Dot -->
       <span class="absolute top-0 right-0 flex h-3.5 w-3.5">

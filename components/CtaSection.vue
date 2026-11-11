@@ -1,9 +1,9 @@
 <template>
-    <section class="py-32 relative overflow-hidden">
+    <section class="py-16 md:py-24 lg:py-32 relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-animated opacity-10"></div>
-        <div class="container mx-auto px-6 relative z-10">
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
             <div class="max-w-4xl mx-auto text-center">
-                <h2 ref="title" class="section-title text-3xl sm:text-6xl md:text-8xl lg:text-6xl">
+                <h2 ref="title" class="section-title text-2xl sm:text-4xl md:text-6xl lg:text-7xl break-words mb-8 md:mb-12">
                     <span class="block overflow-hidden">
                         <span class="inline-block">ГОТОВЫ</span>
                     </span>
@@ -15,16 +15,16 @@
                     </span>
                 </h2>
 
-                <div ref="socialsContainer" class="flex flex-wrap justify-center gap-6 mb-12">
+                <div ref="socialsContainer" class="flex flex-wrap justify-center gap-3 sm:gap-6 mb-8 md:mb-12">
                     <a v-for="social in socials" :key="social.name" :href="social.url" target="_blank"
-                        class="btn-secondary inline-flex items-center gap-3">
-                        <component :is="social.icon" class="w-6 h-6" />
-                        {{ social.name }}
+                        class="btn-secondary inline-flex items-center gap-2.5 sm:gap-3 py-3 px-5 sm:py-4 sm:px-8 text-sm sm:text-base">
+                        <component :is="social.icon" class="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
+                        <span>{{ social.name }}</span>
                     </a>
                 </div>
 
-                <div ref="phone" class="text-3xl md:text-4xl font-bold text-accent">
-                    <a href="tel:+79229159737" class="hover:text-accent-hover transition-colors">
+                <div ref="phone" class="text-2xl sm:text-3xl md:text-4xl font-bold text-accent break-words">
+                    <a href="tel:+79229159737" class="hover:text-accent-hover transition-colors inline-block">
                         +7 922 915-97-37
                     </a>
                 </div>

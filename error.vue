@@ -40,7 +40,7 @@
         </div>
 
         <!-- Title -->
-        <h1 class="text-2xl sm:text-3xl md:text-5xl font-black font-display uppercase tracking-tight text-white mb-4">
+        <h1 class="text-2xl sm:text-3xl md:text-5xl font-black font-display uppercase tracking-tight text-white mb-4 break-words">
           {{ is404 ? 'СТРАНИЦА НЕ НАЙДЕНА' : 'ТЕХНИЧЕСКИЙ ПИТ-СТОП' }}
         </h1>
 

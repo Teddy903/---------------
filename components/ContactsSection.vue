@@ -1,43 +1,43 @@
 <template>
-  <section id="contacts" class="py-32 relative">
-    <div class="container mx-auto px-6">
-      <h2 ref="title" class="section-title text-center mb-20">КОНТАКТЫ</h2>
+  <section id="contacts" class="py-16 md:py-24 lg:py-32 relative">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 ref="title" class="section-title text-center text-3xl sm:text-5xl md:text-7xl mb-10 md:mb-16 break-words">КОНТАКТЫ</h2>
 
-      <div class="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 max-w-6xl mx-auto items-start">
         <!-- Info -->
-        <div ref="info" class="space-y-8">
+        <div ref="info" class="space-y-6 md:space-y-8">
           <!-- Адрес -->
           <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-              <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="flex-shrink-0 w-11 h-11 sm:w-12 sm:h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                 <circle cx="12" cy="10" r="3"/>
               </svg>
             </div>
             <div>
-              <h3 class="text-xl font-bold text-text-primary mb-2">Адрес</h3>
-              <p class="text-text-secondary">Киров, Хлебозаводской проезд, 3А</p>
+              <h3 class="text-lg sm:text-xl font-bold text-text-primary mb-1 sm:mb-2">Адрес</h3>
+              <p class="text-sm sm:text-base text-text-secondary">Киров, Хлебозаводской проезд, 3А</p>
             </div>
           </div>
 
           <!-- Телефон -->
           <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-              <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="flex-shrink-0 w-11 h-11 sm:w-12 sm:h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
               </svg>
             </div>
             <div>
-              <h3 class="text-xl font-bold text-text-primary mb-2">Телефон</h3>
-              <a href="tel:+79229159737" class="text-text-secondary hover:text-accent transition-colors">
+              <h3 class="text-lg sm:text-xl font-bold text-text-primary mb-1 sm:mb-2">Телефон</h3>
+              <a href="tel:+79229159737" class="text-sm sm:text-base text-text-secondary hover:text-accent transition-colors font-medium">
                 +7 922 915-97-37
               </a>
             </div>
           </div>
 
           <!-- Соцсети -->
-          <div class="pt-8">
-            <h3 class="text-xl font-bold text-text-primary mb-6">Мы в соцсетях</h3>
+          <div class="pt-4 md:pt-6">
+            <h3 class="text-lg sm:text-xl font-bold text-text-primary mb-4 md:mb-6">Мы в соцсетях</h3>
             <SocialLinks />
           </div>
         </div>
@@ -45,7 +45,7 @@
         <!-- Карта -->
         <div 
           ref="mapContainer" 
-          class="aspect-square rounded-2xl overflow-hidden bg-primary-card border border-neutral-800 shadow-2xl shadow-black/50"
+          class="aspect-[4/3] sm:aspect-square min-h-[280px] sm:min-h-[350px] w-full rounded-2xl overflow-hidden bg-primary-card border border-neutral-800 shadow-2xl shadow-black/50"
         >
           <!-- Контейнер для Яндекс.Карты -->
           <div id="yandex-map" class="w-full h-full"></div>

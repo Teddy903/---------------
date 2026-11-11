@@ -1,7 +1,7 @@
 <template>
-  <footer ref="footerRef" class="py-12 border-t border-gray-800">
-    <div class="container mx-auto px-6">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+  <footer ref="footerRef" class="py-10 md:py-12 border-t border-gray-800">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
         <!-- Logo -->
         <NuxtLink to="/" class="flex-shrink-0">
           <NuxtImg src="/images/logo.png" alt="Детейлинг Мастер" class="h-10 w-auto" width="1953" height="582" format="webp" />

@@ -25,8 +25,7 @@
 
                 <!-- Content -->
                 <div ref="content">
-                    <!-- Изменено: mb-6 на мобильных, mb-8 на десктопе -->
-                    <h2 class="section-title mb-6 md:mb-8 text-4xl sm:text-6xl md:text-8xl lg:text-9xl">О НАС</h2>
+                    <h2 class="section-title mb-6 md:mb-8 text-3xl sm:text-5xl md:text-7xl lg:text-8xl break-words">О НАС</h2>
                     
                     <!-- Изменено: text-base на мобильных, text-xl на десктопе. Отступы уменьшены -->
                     <p class="text-base md:text-xl text-text-secondary mb-6 md:mb-8 leading-relaxed">

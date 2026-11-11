@@ -14,7 +14,7 @@
           <span class="text-sm font-medium">Вернуться на главную</span>
         </NuxtLink>
         
-        <h1 class="text-2xl md:text-3xl lg:text-6xl font-black uppercase tracking-tight mb-4">
+        <h1 class="text-2xl sm:text-3xl lg:text-5xl font-black uppercase tracking-tight mb-4 break-words">
           Политика конфиденциальности
         </h1>
         <p class="text-text-secondary text-sm md:text-base">

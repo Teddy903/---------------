@@ -2,7 +2,7 @@
   <section id="faq" class="py-16 md:py-24 lg:py-32 relative bg-primary">
     <div class="container mx-auto px-4 md:px-6 relative z-10">
       <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-        <h2 ref="title" class="section-title text-3xl sm:text-5xl md:text-7xl lg:text-7xl mb-4">
+        <h2 ref="title" class="section-title text-3xl sm:text-5xl md:text-7xl lg:text-7xl mb-4 break-words">
           ВОПРОСЫ И ОТВЕТЫ
         </h2>
         <p ref="subtitle" class="text-text-secondary text-sm md:text-base lg:text-lg">
@@ -10,27 +10,27 @@
         </p>
       </div>
 
-      <div ref="faqContainer" class="max-w-3xl mx-auto space-y-4">
+      <div ref="faqContainer" class="max-w-3xl mx-auto space-y-3 sm:space-y-4">
         <div
           v-for="(item, index) in faqList"
           :key="index"
-          class="faq-item border rounded-2xl transition-colors duration-300 overflow-hidden"
+          class="faq-item border rounded-xl sm:rounded-2xl transition-colors duration-300 overflow-hidden"
           :class="openIndex === index ? 'border-white/40 bg-white/[0.04]' : 'border-neutral-800 bg-primary-card hover:border-neutral-700'"
         >
           <button
             type="button"
             @click="toggle(index)"
-            class="w-full p-5 md:p-6 text-left flex items-center justify-between gap-4 select-none cursor-pointer"
+            class="w-full p-4 sm:p-5 md:p-6 text-left flex items-start sm:items-center justify-between gap-3 sm:gap-4 select-none cursor-pointer"
             :aria-expanded="openIndex === index"
           >
-            <span class="text-base md:text-lg font-bold font-display text-white">
+            <span class="text-sm sm:text-base md:text-lg font-bold font-display text-white break-words">
               {{ item.question }}
             </span>
             <div
-              class="w-8 h-8 rounded-full border border-neutral-700 flex items-center justify-center flex-shrink-0 text-white transition-transform duration-300"
+              class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-neutral-700 flex items-center justify-center flex-shrink-0 text-white transition-transform duration-300 mt-0.5 sm:mt-0"
               :class="openIndex === index ? 'rotate-180 border-white bg-white text-black' : ''"
             >
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M6 9l6 6 6-6" />
               </svg>
             </div>
@@ -38,7 +38,7 @@
 
           <div
             v-show="openIndex === index"
-            class="px-5 pb-6 md:px-6 md:pb-6 text-text-secondary text-sm md:text-base leading-relaxed border-t border-neutral-800/60 pt-4"
+            class="px-4 pb-5 sm:px-5 sm:pb-6 md:px-6 md:pb-6 text-text-secondary text-xs sm:text-sm md:text-base leading-relaxed border-t border-neutral-800/60 pt-3 sm:pt-4 break-words"
           >
             <p>{{ item.answer }}</p>
           </div>

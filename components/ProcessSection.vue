@@ -1,30 +1,30 @@
 <template>
-    <section class="py-32 relative">
-        <div class="container mx-auto px-6">
-            <h2 ref="title" class="section-title text-4xl sm:text-6xl md:text-8xl lg:text-8xl">КАК МЫ РАБОТАЕМ</h2>
+    <section class="py-16 md:py-24 lg:py-32 relative">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h2 ref="title" class="section-title text-3xl sm:text-5xl md:text-7xl lg:text-8xl break-words mb-12 md:mb-20">КАК МЫ РАБОТАЕМ</h2>
             <div ref="stepsContainer" class="relative max-w-4xl mx-auto">
                 <!-- Progress Line -->
                 <div ref="progressLine"
-                    class="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-800 -translate-x-1/2">
+                    class="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-800 -translate-x-1/2">
                     <div ref="progressFill" class="w-full bg-accent origin-top" :style="{ height: `${progress}%` }">
                     </div>
                 </div>
 
                 <!-- Steps -->
                 <div v-for="(step, index) in stepsData" :key="index" ref="stepElements"
-                    class="relative flex items-center mb-16 last:mb-0"
+                    class="relative flex items-center mb-12 md:mb-16 last:mb-0"
                     :class="index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'">
                     <!-- Number -->
                     <div
-                        class="absolute left-8 md:left-1/2 w-16 h-16 bg-primary-card border-2 border-accent rounded-full flex items-center justify-center -translate-x-1/2 z-10">
-                        <span class="text-2xl font-bold text-accent">{{ String(index + 1).padStart(2, '0') }}</span>
+                        class="absolute left-6 md:left-1/2 w-12 h-12 md:w-16 md:h-16 bg-primary-card border-2 border-accent rounded-full flex items-center justify-center -translate-x-1/2 z-10 shadow-lg shadow-black/80">
+                        <span class="text-base sm:text-lg md:text-2xl font-bold text-accent font-display">{{ String(index + 1).padStart(2, '0') }}</span>
                     </div>
 
                     <!-- Content -->
-                    <div class="ml-24 md:ml-0 md:w-1/2"
+                    <div class="ml-14 sm:ml-16 md:ml-0 md:w-1/2"
                         :class="index % 2 === 0 ? 'md:pr-16 md:text-right' : 'md:pl-16'">
-                        <h3 class="text-2xl font-bold text-text-primary mb-3">{{ step.title }}</h3>
-                        <p class="text-text-secondary">{{ step.description }}</p>
+                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-text-primary mb-2 break-words">{{ step.title }}</h3>
+                        <p class="text-xs sm:text-sm md:text-base text-text-secondary leading-relaxed break-words">{{ step.description }}</p>
                     </div>
                 </div>
             </div>

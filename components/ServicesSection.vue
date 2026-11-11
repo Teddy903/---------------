@@ -4,8 +4,7 @@
     <!-- Исправлено: px-4 на мобильных для максимального использования ширины экрана -->
     <div class="container mx-auto px-4 md:px-6">
       
-      <!-- Исправлено: mb-10 на мобильных, mb-16 на планшетах, mb-20 на десктопе -->
-      <h2 ref="title" class="section-title text-4xl sm:text-6xl md:text-8xl lg:text-8xl">УСЛУГИ</h2>
+      <h2 ref="title" class="section-title text-3xl sm:text-5xl md:text-7xl lg:text-8xl break-words mb-8 md:mb-16">УСЛУГИ</h2>
       
       <!-- Исправлено: gap-6 на мобильных, gap-8 на планшетах и десктопе -->
       <div ref="cardsContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
