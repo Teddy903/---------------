@@ -8,7 +8,7 @@
             </div>
 
             <div class="text-center mt-12">
-                <a href="https://vk.ru/club241937554" target="_blank"
+                <a href="https://vk.ru/club241937554" target="_blank" rel="noopener noreferrer"
                     class="btn-primary inline-flex items-center gap-2">
                     Смотреть все работы в VK
                     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -26,6 +26,9 @@ const { gsap } = useGsap()
 const title = ref<HTMLElement | null>(null)
 const slider = ref<HTMLElement | null>(null)
 
+let titleAnim: any = null
+let sliderAnim: any = null
+
 const works = [
     {
         before: '/images/works/before-1.jpg',
@@ -33,15 +36,14 @@ const works = [
         title: 'Химчистка салона Ford focus 2'
     },
     {
-        before: '/images/works/after-2.jpg',
-        after: '/images/works/before-2.jpg',
+        before: '/images/works/before-2.jpg',
+        after: '/images/works/after-2.jpg',
         title: 'Химчистка салона Chevrolet Lacetti'
     }
-
 ]
 
 onMounted(() => {
-    gsap.fromTo(
+    titleAnim = gsap.fromTo(
         title.value,
         { y: 50, opacity: 0 },
         {
@@ -55,7 +57,7 @@ onMounted(() => {
         }
     )
 
-    gsap.fromTo(
+    sliderAnim = gsap.fromTo(
         slider.value,
         { y: 80, opacity: 0 },
         {
@@ -68,5 +70,10 @@ onMounted(() => {
             }
         }
     )
+})
+
+onUnmounted(() => {
+    if (titleAnim) titleAnim.scrollTrigger?.kill()
+    if (sliderAnim) sliderAnim.scrollTrigger?.kill()
 })
 </script>

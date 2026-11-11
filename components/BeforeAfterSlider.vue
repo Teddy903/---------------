@@ -1,20 +1,22 @@
 <template>
-  <div ref="container" class="relative aspect-video rounded-2xl overflow-hidden bg-primary-card mb-8 select-none group"
-    @mousemove="handleHover" @mouseleave="handleLeave">
+  <div ref="container"
+    class="relative aspect-video rounded-2xl overflow-hidden bg-primary-card mb-8 select-none group cursor-ew-resize touch-none"
+    @mousedown="startDrag"
+    @touchstart="startDrag">
     <!-- BEFORE Image (Bottom Layer) -->
-    <!-- Лежит внизу, занимает всю ширину -->
     <div class="absolute inset-0 z-0">
-      <img v-if="beforeImage" :src="beforeImage" alt="До" class="w-full h-full object-cover pointer-events-none"
-        draggable="false" />
+      <NuxtImg v-if="beforeImage" :src="beforeImage" alt="До" format="webp" quality="80" loading="lazy" decoding="async"
+        class="w-full h-full object-cover pointer-events-none" draggable="false" />
       <div v-else
         class="w-full h-full bg-neutral-800 flex items-center justify-center text-neutral-500 font-display uppercase tracking-widest">
         Фото До
       </div>
-    </div><!-- AFTER Image (Top Layer) -->
-    <!-- Лежит сверху, обрезается справа налево через clip-path -->
+    </div>
+
+    <!-- AFTER Image (Top Layer) -->
     <div class="absolute inset-0 z-10" :style="{ clipPath: `inset(0 0 0 ${sliderPosition}%)` }">
-      <img v-if="afterImage" :src="afterImage" alt="После" class="w-full h-full object-cover pointer-events-none"
-        draggable="false" />
+      <NuxtImg v-if="afterImage" :src="afterImage" alt="После" format="webp" quality="80" loading="lazy" decoding="async"
+        class="w-full h-full object-cover pointer-events-none" draggable="false" />
       <div v-else
         class="w-full h-full bg-neutral-700 flex items-center justify-center text-neutral-400 font-display uppercase tracking-widest">
         Фото После
@@ -26,11 +28,10 @@
       :style="{ left: `${sliderPosition}%` }"></div>
 
     <!-- Slider Handle Button (Кнопка по центру линии) -->
-    <div ref="handle" class="absolute top-1/2 -translate-y-1/2 z-40 cursor-ew-resize touch-none"
-      :style="{ left: `${sliderPosition}%` }" @mousedown.prevent="startDrag" @touchstart.prevent="startDrag">
-      <!-- -translate-x-1/2 центрирует кнопку относительно точки left -->
+    <div ref="handle" class="absolute top-1/2 -translate-y-1/2 z-40 pointer-events-none"
+      :style="{ left: `${sliderPosition}%` }">
       <div
-        class="-translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200">
+        class="-translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200">
         <svg class="w-6 h-6 text-black drop-shadow-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor"
           stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M18 8L22 12L18 16" />
@@ -73,13 +74,13 @@ const startDrag = (e: MouseEvent | TouchEvent) => {
   if (!container.value) return
   isDragging = true
 
-  // Update position immediately on click
+  // Update position immediately on click/touch anywhere on the slider
   updatePosition(e)
 
-  document.addEventListener('mousemove', onDrag)
-  document.addEventListener('touchmove', onDrag, { passive: false })
-  document.addEventListener('mouseup', stopDrag)
-  document.addEventListener('touchend', stopDrag)
+  window.addEventListener('mousemove', onDrag)
+  window.addEventListener('touchmove', onDrag, { passive: false })
+  window.addEventListener('mouseup', stopDrag)
+  window.addEventListener('touchend', stopDrag)
 }
 
 const onDrag = (e: MouseEvent | TouchEvent) => {
@@ -92,9 +93,7 @@ const updatePosition = (e: MouseEvent | TouchEvent) => {
   if (!container.value) return
 
   const rect = container.value.getBoundingClientRect()
-  const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX
-
-  // Calculate percentage relative to container
+  const clientX = 'touches' in e ? e.touches[0].clientX : (e as MouseEvent).clientX
 
   let x = clientX - rect.left
   let percentage = (x / rect.width) * 100
@@ -107,19 +106,10 @@ const updatePosition = (e: MouseEvent | TouchEvent) => {
 
 const stopDrag = () => {
   isDragging = false
-  document.removeEventListener('mousemove', onDrag)
-  document.removeEventListener('touchmove', onDrag)
-  document.removeEventListener('mouseup', stopDrag)
-  document.removeEventListener('touchend', stopDrag)
-}
-
-// Optional: Hover effect to slightly enlarge handle or show hint
-const handleHover = (e: MouseEvent) => {
-  // Can add subtle parallax or glow here if needed
-}
-
-const handleLeave = () => {
-  // Reset any hover states
+  window.removeEventListener('mousemove', onDrag)
+  window.removeEventListener('touchmove', onDrag)
+  window.removeEventListener('mouseup', stopDrag)
+  window.removeEventListener('touchend', stopDrag)
 }
 
 onUnmounted(() => {

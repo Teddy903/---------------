@@ -31,7 +31,7 @@
           <div class="space-y-4 text-text-secondary leading-relaxed">
             <p>
               Настоящая Политика конфиденциальности (далее — «Политика») описывает, как сайт 
-              <span class="text-white">detalingmaster.ru</span> (далее — «Сайт») обрабатывает информацию, 
+              <span class="text-white">detailingmaster.ru</span> (далее — «Сайт») обрабатывает информацию, 
               получаемую при посещении пользователями.
             </p>
             <p>
@@ -208,7 +208,7 @@
             <p>
               Актуальная версия Политики всегда доступна по адресу: 
               <NuxtLink to="/privacy-policy" class="text-white underline hover:text-accent transition-colors">
-                detaling-kirov.ru/privacy-policy
+                detailingmaster.ru/privacy-policy
               </NuxtLink>
             </p>
           </div>
@@ -228,7 +228,13 @@ useHead({
     {
       name: 'description',
       content: 'Политика конфиденциальности сайта детейлинг-студии в Кирове. Информация о сборе данных через Яндекс.Метрику и использовании cookie.'
-    }
+    },
+    { property: 'og:title', content: 'Политика конфиденциальности | Детейлинг студия в Кирове' },
+    { property: 'og:description', content: 'Политика конфиденциальности сайта детейлинг-студии в Кирове.' },
+    { property: 'og:type', content: 'article' }
+  ],
+  link: [
+    { rel: 'canonical', href: 'https://detailingmaster.ru/privacy-policy' }
   ]
 })
 </script>

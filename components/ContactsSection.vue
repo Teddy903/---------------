@@ -103,11 +103,33 @@ onMounted(async () => {
     )
   }
 
-  // Инициализация карты только когда секция видна
+  // Инициализация карты
+  const checkAndInitMap = () => {
+    if (window.ymaps) {
+      initYandexMap()
+    } else {
+      let retries = 0
+      const timer = setInterval(() => {
+        retries++
+        if (window.ymaps) {
+          clearInterval(timer)
+          initYandexMap()
+        } else if (retries > 30) {
+          clearInterval(timer)
+        }
+      }, 300)
+    }
+  }
+
+  // Также делаем функцию доступной глобально, если сторонний скрипт попытается ее вызвать
+  if (typeof window !== 'undefined') {
+    (window as any).initYandexMap = initYandexMap
+  }
+
   const mapObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting && window.ymaps) {
-        initYandexMap()
+      if (entry.isIntersecting) {
+        checkAndInitMap()
         mapObserver.unobserve(entry.target)
       }
     })
@@ -118,9 +140,12 @@ onMounted(async () => {
 
 // Функция инициализации карты (вызывается после загрузки API)
 function initYandexMap() {
-  if (!window.ymaps || !document.getElementById('yandex-map')) return
+  if (typeof window === 'undefined' || !window.ymaps || !document.getElementById('yandex-map')) return
 
   window.ymaps.ready(() => {
+    const container = document.getElementById('yandex-map')
+    if (!container || container.children.length > 0) return
+
     const map = new window.ymaps.Map('yandex-map', {
       center: STUDIO_COORDS,
       zoom: 16,

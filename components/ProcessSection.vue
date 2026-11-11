@@ -61,8 +61,12 @@ const stepsData = [
     }
 ]
 
+let titleAnim: any = null
+let progressAnim: any = null
+const stepAnims: any[] = []
+
 onMounted(() => {
-    gsap.fromTo(
+    titleAnim = gsap.fromTo(
         title.value,
         { y: 50, opacity: 0 },
         {
@@ -77,7 +81,7 @@ onMounted(() => {
     )
 
     // Progress line animation
-    gsap.to(progressFill.value, {
+    progressAnim = gsap.to(progressFill.value, {
         height: '100%',
         ease: 'none',
         scrollTrigger: {
@@ -93,7 +97,7 @@ onMounted(() => {
 
     // Steps animation
     stepElements.value?.forEach((step, index) => {
-        gsap.fromTo(
+        const anim = gsap.fromTo(
             step,
             {
                 x: index % 2 === 0 ? -50 : 50,
@@ -109,6 +113,13 @@ onMounted(() => {
                 }
             }
         )
+        stepAnims.push(anim)
     })
+})
+
+onUnmounted(() => {
+    if (titleAnim) titleAnim.scrollTrigger?.kill()
+    if (progressAnim) progressAnim.scrollTrigger?.kill()
+    stepAnims.forEach(anim => anim.scrollTrigger?.kill())
 })
 </script>

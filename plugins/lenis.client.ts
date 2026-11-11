@@ -1,27 +1,32 @@
 import Lenis from 'lenis'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { gsap } from 'gsap'
 
 export default defineNuxtPlugin(() => {
-if (process.client) {
-const lenis = new Lenis({
-duration: 1.2,
-easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-direction: 'vertical',
-gestureDirection: 'vertical',
-smooth: true,
-smoothTouch: false,
-touchMultiplier: 2
-})
-function raf(time: number) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
-}
+  if (process.client) {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      smoothTouch: false,
+      touchMultiplier: 2
+    })
 
-requestAnimationFrame(raf)
+    // Синхронизируем Lenis плавный скролл с GSAP ScrollTrigger
+    lenis.on('scroll', ScrollTrigger.update)
 
-return {
-  provide: {
-    lenis
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000)
+    })
+
+    gsap.ticker.lagSmoothing(0)
+
+    return {
+      provide: {
+        lenis
+      }
+    }
   }
-}
-}
 })

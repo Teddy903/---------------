@@ -85,13 +85,18 @@ const MaxIcon = {
 
 const socials = [
 { name: 'Telegram', url: 'https://t.me/79229159737', icon: TelegramIcon },
+{ name: 'WhatsApp', url: 'https://wa.me/79229159737', icon: WhatsAppIcon },
 { name: 'VK', url: 'https://vk.ru/club241937554', icon: VkIcon },
 { name: 'Макс', url: 'https://max.ru/79229159737', icon: MaxIcon }
 ]
 
+let titleAnim: any = null
+let socialsAnim: any = null
+let phoneAnim: any = null
+
 onMounted(() => {
     // Title animation
-    gsap.fromTo(
+    titleAnim = gsap.fromTo(
         title.value?.querySelectorAll('span'),
         { rotateX: 90, opacity: 0 },
         {
@@ -108,7 +113,7 @@ onMounted(() => {
     )
 
     // Social buttons
-    gsap.fromTo(
+    socialsAnim = gsap.fromTo(
         socialsContainer.value?.children,
         { scale: 0, opacity: 0 },
         {
@@ -125,7 +130,7 @@ onMounted(() => {
     )
 
     // Phone
-    gsap.fromTo(
+    phoneAnim = gsap.fromTo(
         phone.value,
         { y: 30, opacity: 0 },
         {
@@ -138,5 +143,11 @@ onMounted(() => {
             }
         }
     )
+})
+
+onUnmounted(() => {
+    if (titleAnim) titleAnim.scrollTrigger?.kill()
+    if (socialsAnim) socialsAnim.scrollTrigger?.kill()
+    if (phoneAnim) phoneAnim.scrollTrigger?.kill()
 })
 </script>
