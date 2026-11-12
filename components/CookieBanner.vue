@@ -50,11 +50,35 @@ const banner = ref<HTMLElement | null>(null)
 const showBanner = ref(false)
 let bannerAnim: any = null
 
-onMounted(() => {
-  // Проверяем, давал ли уже пользователь согласие
-  const hasConsent = localStorage.getItem('cookie_consent_accepted')
+// Ключ для хранения и срок действия (например, 180 дней = ~6 месяцев)
+const CONSENT_KEY = 'cookie_consent_data'
+const CONSENT_DURATION_MS = 180 * 24 * 60 * 60 * 1000 
 
-  if (!hasConsent) {
+onMounted(() => {
+  const consentDataStr = localStorage.getItem(CONSENT_KEY)
+  let shouldShowBanner = true
+
+  if (consentDataStr) {
+    try {
+      // Пытаемся распарсить данные (с защитой от старых записей, где был просто 'true')
+      const data = typeof consentDataStr === 'string' && consentDataStr.startsWith('{') 
+        ? JSON.parse(consentDataStr) 
+        : { accepted: consentDataStr === 'true', timestamp: 0 }
+
+      const now = Date.now()
+      const isExpired = (now - data.timestamp) > CONSENT_DURATION_MS
+
+      // Если согласие дано и срок еще не истек, баннер не показываем
+      if (data.accepted && !isExpired) {
+        shouldShowBanner = false
+      }
+    } catch (e) {
+      // Если данные повреждены, на всякий случай показываем баннер
+      console.warn('Ошибка парсинга данных cookie consent', e)
+    }
+  }
+
+  if (shouldShowBanner) {
     showBanner.value = true
 
     // Анимируем появление снизу
@@ -71,8 +95,12 @@ onMounted(() => {
 })
 
 const acceptCookies = () => {
-  // 1. Сохраняем согласие в localStorage
-  localStorage.setItem('cookie_consent_accepted', 'true')
+  // 1. Сохраняем согласие с текущей меткой времени
+  const consentData = {
+    accepted: true,
+    timestamp: Date.now()
+  }
+  localStorage.setItem(CONSENT_KEY, JSON.stringify(consentData))
 
   // 2. Анимируем исчезновение
   if (bannerAnim && banner.value) {
@@ -90,6 +118,8 @@ const acceptCookies = () => {
 }
 
 onUnmounted(() => {
-  if (bannerAnim) bannerAnim.kill()
+  if (bannerAnim) {
+    bannerAnim.kill()
+  }
 })
 </script>
