@@ -1,7 +1,12 @@
 <template>
     <section class="py-16 md:py-24 lg:py-32 relative">
         <div class="container mx-auto px-4 sm:px-6">
-            <h2 ref="title" class="section-title text-3xl sm:text-5xl md:text-7xl lg:text-8xl break-words mb-12 md:mb-20">КАК МЫ РАБОТАЕМ</h2>
+            <div class="section-header">
+                <h2 ref="title" class="section-title">КАК МЫ РАБОТАЕМ</h2>
+                <p class="section-subtitle">
+                    Понятный и прозрачный технологический процесс на каждом этапе работы
+                </p>
+            </div>
             <div ref="stepsContainer" class="relative max-w-4xl mx-auto">
                 <!-- Progress Line -->
                 <div ref="progressLine"

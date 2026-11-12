@@ -1,7 +1,12 @@
 <template>
   <section id="contacts" class="py-16 md:py-24 lg:py-32 relative">
     <div class="container mx-auto px-4 sm:px-6">
-      <h2 ref="title" class="section-title text-center text-3xl sm:text-5xl md:text-7xl mb-10 md:mb-16 break-words">КОНТАКТЫ</h2>
+      <div class="section-header">
+        <h2 ref="title" class="section-title">КОНТАКТЫ</h2>
+        <p class="section-subtitle">
+          Запишитесь на осмотр или задайте любой вопрос мастерам студии
+        </p>
+      </div>
 
       <div class="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 max-w-6xl mx-auto items-start">
         <!-- Info -->

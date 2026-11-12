@@ -1,11 +1,11 @@
 <template>
   <section id="faq" class="py-16 md:py-24 lg:py-32 relative bg-primary">
     <div class="container mx-auto px-4 md:px-6 relative z-10">
-      <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-        <h2 ref="title" class="section-title text-3xl sm:text-5xl md:text-7xl lg:text-7xl mb-4 break-words">
+      <div class="section-header">
+        <h2 ref="title" class="section-title">
           ВОПРОСЫ И ОТВЕТЫ
         </h2>
-        <p ref="subtitle" class="text-text-secondary text-sm md:text-base lg:text-lg">
+        <p ref="subtitle" class="section-subtitle">
           Ответы на самые частые вопросы автовладельцев перед визитом в нашу студию
         </p>
       </div>
@@ -48,7 +48,7 @@
       <!-- Support hint -->
       <div class="text-center mt-12 text-sm text-text-secondary">
         Остались вопросы по вашему автомобилю?
-        <a href="https://t.me/79229159737" target="_blank" rel="noopener noreferrer" class="text-white underline underline-offset-4 hover:text-accent font-medium ml-1">
+        <a href="https://t.me/+79229159737" target="_blank" rel="noopener noreferrer" class="text-white underline underline-offset-4 hover:text-accent font-medium ml-1">
           Напишите мастеру в Telegram
         </a>
       </div>

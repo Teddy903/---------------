@@ -57,9 +57,10 @@ const localBusinessSchema = {
         }
     ],
     sameAs: [
-        'https://vk.ru/club241937554',
-        'https://t.me/79229159737',
-        'https://wa.me/79229159737'
+        'https://vk.com/club241937554',
+        'https://t.me/+79229159737',
+        'https://wa.me/79229159737',
+        'https://max.ru/u/f9LHodD0cOKVEKsGKSGdez_in4PN-g2nWFQGKlWF-WGVbKUHcYOZoZpcEu4'
     ],
     hasOfferCatalog: {
         '@type': 'OfferCatalog',

@@ -52,17 +52,15 @@ const MaxIcon = {
     return h('svg', {
       viewBox: '0 0 24 24',
       fill: 'currentColor',
-      class: 'w-6 h-6',
       innerHTML: '<path d="M12.18 0.06C18.79 0.06 23.97 5.42 23.97 12.04C23.97 18.65 18.63 23.88 12.25 23.88C9.98 23.88 8.88 23.56 7.12 22.31C6.99 22.22 6.83 22.24 6.73 22.35C5.37 23.80 1.88 24.82 1.72 22.84C1.72 19.39 0 17.15 0 11.97C0 5.17 5.57 0.06 12.18 0.06ZM12.37 5.95C9.23 5.79 6.78 7.97 6.24 11.37C5.80 14.19 6.59 17.63 7.27 17.80C7.55 17.88 8.25 17.35 8.75 16.87C8.84 16.78 8.99 16.77 9.10 16.84C9.88 17.32 10.77 17.68 11.75 17.73C14.97 17.89 17.82 15.37 17.99 12.16C18.16 8.94 15.59 6.12 12.37 5.95V5.95Z" />'
     })
   }
 }
 
-
 const socials = [
-{ name: 'Telegram', url: 'https://t.me/79229159737', icon: TelegramIcon },
-{ name: 'WhatsApp', url: 'https://wa.me/79229159737', icon: WhatsAppIcon },
-{ name: 'VK', url: 'https://vk.ru/club241937554', icon: VkIcon },
-{ name: 'Макс', url: 'https://max.ru/79229159737', icon: MaxIcon }
+  { name: 'Telegram', url: 'https://t.me/+79229159737', icon: TelegramIcon },
+  { name: 'WhatsApp', url: 'https://wa.me/79229159737', icon: WhatsAppIcon },
+  { name: 'ВКонтакте', url: 'https://vk.com/club241937554', icon: VkIcon },
+  { name: 'MAX', url: 'https://max.ru/u/f9LHodD0cOKVEKsGKSGdez_in4PN-g2nWFQGKlWF-WGVbKUHcYOZoZpcEu4', icon: MaxIcon }
 ]
 </script>

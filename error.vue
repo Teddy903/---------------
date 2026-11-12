@@ -69,7 +69,7 @@
           </button>
 
           <a
-            href="https://t.me/79229159737"
+            href="https://t.me/+79229159737"
             target="_blank"
             rel="noopener noreferrer"
             class="btn-secondary w-full sm:w-auto inline-flex items-center justify-center gap-2"
@@ -105,9 +105,10 @@
     <footer class="container mx-auto px-4 md:px-6 py-6 border-t border-neutral-900 text-center text-xs text-neutral-600 relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4">
       <p>© {{ new Date().getFullYear() }} Детейлинг Мастер • Киров</p>
       <div class="flex items-center gap-4">
-        <a href="https://t.me/79229159737" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Telegram</a>
+        <a href="https://t.me/+79229159737" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Telegram</a>
         <a href="https://wa.me/79229159737" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">WhatsApp</a>
-        <a href="https://vk.ru/club241937554" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">VK</a>
+        <a href="https://vk.com/club241937554" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">VK</a>
+        <a href="https://max.ru/u/f9LHodD0cOKVEKsGKSGdez_in4PN-g2nWFQGKlWF-WGVbKUHcYOZoZpcEu4" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">MAX</a>
       </div>
     </footer>
   </div>

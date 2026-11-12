@@ -1,9 +1,9 @@
 <template>
    <section id="pricing" class="py-16 md:py-24 lg:py-32 relative">
     <div class="container mx-auto px-4 sm:px-6">
-      <div class="text-center max-w-3xl mx-auto mb-12 md:mb-20">
-        <h2 ref="title" class="section-title text-3xl sm:text-5xl md:text-7xl lg:text-8xl break-words mb-4">СТОИМОСТЬ УСЛУГ</h2>
-        <p class="text-text-secondary text-sm md:text-base lg:text-lg">
+      <div class="section-header">
+        <h2 ref="title" class="section-title">СТОИМОСТЬ УСЛУГ</h2>
+        <p class="section-subtitle">
           Точная стоимость рассчитывается индивидуально после осмотра автомобиля.
           Ниже указаны базовые цены для популярных классов авто.
         </p>
@@ -49,7 +49,7 @@
           Напишите нам, и мы рассчитаем точную стоимость за 5 минут.
         </p>
         <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
-          <a href="https://t.me/79229159737" target="_blank" rel="noopener noreferrer"
+          <a href="https://t.me/+79229159737" target="_blank" rel="noopener noreferrer"
             class="btn-secondary inline-flex items-center gap-2 text-xs sm:text-sm py-2.5 sm:py-3 px-4 sm:px-6">
             <svg class="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
               <path
@@ -65,13 +65,21 @@
             </svg>
             Написать в WhatsApp
           </a>
-          <a href="https://max.ru/79229159737" target="_blank" rel="noopener noreferrer"
+          <a href="https://vk.com/club241937554" target="_blank" rel="noopener noreferrer"
+            class="btn-secondary inline-flex items-center gap-2 text-xs sm:text-sm py-2.5 sm:py-3 px-4 sm:px-6">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.391 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.862-.523-2.049-1.714-1.033-1.01-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C4.624 10.857 4.03 8.57 4.03 8.096c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.677.863 2.49 2.303 4.675 2.896 4.675.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.203.17-.407.44-.407h2.744c.373 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.253-1.406 2.151-3.574 2.151-3.574.119-.254.322-.491.763-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.049.17.49-.085.744-.576.744z" />
+            </svg>
+            Написать в VK
+          </a>
+          <a href="https://max.ru/u/f9LHodD0cOKVEKsGKSGdez_in4PN-g2nWFQGKlWF-WGVbKUHcYOZoZpcEu4" target="_blank" rel="noopener noreferrer"
             class="btn-secondary inline-flex items-center gap-2 text-xs sm:text-sm py-2.5 sm:py-3 px-4 sm:px-6">
             <svg class="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M12.18 0.06C18.79 0.06 23.97 5.42 23.97 12.04C23.97 18.65 18.63 23.88 12.25 23.88C9.98 23.88 8.88 23.56 7.12 22.31C6.99 22.22 6.83 22.24 6.73 22.35C5.37 23.80 1.88 24.82 1.72 22.84C1.72 19.39 0 17.15 0 11.97C0 5.17 5.57 0.06 12.18 0.06ZM12.37 5.95C9.23 5.79 6.78 7.97 6.24 11.37C5.80 14.19 6.59 17.63 7.27 17.80C7.55 17.88 8.25 17.35 8.75 16.87C8.84 16.78 8.99 16.77 9.10 16.84C9.88 17.32 10.77 17.68 11.75 17.73C14.97 17.89 17.82 15.37 17.99 12.16C18.16 8.94 15.59 6.12 12.37 5.95V5.95Z" />
             </svg>
-            Написать в Макс
+            Написать в MAX
           </a>
         </div>
       </div>

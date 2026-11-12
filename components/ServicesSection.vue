@@ -1,13 +1,17 @@
 <template>
   <!-- Исправлено: py-16 на мобильных, py-24 на планшетах, py-32 на десктопе -->
   <section id="services" class="py-16 md:py-24 lg:py-32 relative">
-    <!-- Исправлено: px-4 на мобильных для максимального использования ширины экрана -->
     <div class="container mx-auto px-4 md:px-6">
       
-      <h2 ref="title" class="section-title text-3xl sm:text-5xl md:text-7xl lg:text-8xl break-words mb-8 md:mb-16">УСЛУГИ</h2>
+      <!-- Unified Section Header -->
+      <div ref="headerRef" class="section-header">
+        <h2 class="section-title">УСЛУГИ</h2>
+        <p class="section-subtitle">
+          Комплексный профессиональный уход за экстерьером и интерьером вашего автомобиля
+        </p>
+      </div>
       
-      <!-- Исправлено: gap-6 на мобильных, gap-8 на планшетах и десктопе -->
-      <div ref="cardsContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <div ref="cardsContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
         <ServiceCard 
           v-for="(service, index) in services" 
           :key="service.title" 
@@ -24,7 +28,7 @@
 <script setup lang="ts">
 const { gsap } = useGsap()
 
-const title = ref<HTMLElement | null>(null)
+const headerRef = ref<HTMLElement | null>(null)
 const cardsContainer = ref<HTMLElement | null>(null)
 
 // Компоненты иконок (минималистичные SVG)
@@ -123,20 +127,21 @@ let cardsAnim: any = null
 onMounted(async () => {
   await nextTick()
 
-  if (!title.value || !cardsContainer.value) return
+  if (!headerRef.value || !cardsContainer.value) return
 
-  // Title animation (чуть уменьшил y для более аккуратного появления на мобильных)
+  // Header animation
   titleAnim = gsap.fromTo(
-    title.value,
+    headerRef.value.children,
     { y: 30, opacity: 0 },
     {
       y: 0,
       opacity: 1,
+      stagger: 0.1,
       duration: 0.8,
       ease: 'power2.out',
       scrollTrigger: {
-        trigger: title.value,
-        start: 'top 85%' // Запускаем чуть раньше на мобильных
+        trigger: headerRef.value,
+        start: 'top 85%'
       }
     }
   )

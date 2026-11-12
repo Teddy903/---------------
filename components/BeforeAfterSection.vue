@@ -1,14 +1,19 @@
 <template>
     <section id="works" class="py-16 md:py-24 lg:py-32 relative overflow-hidden">
         <div class="container mx-auto px-4 sm:px-6">
-            <h2 ref="title" class="section-title text-3xl sm:text-5xl md:text-7xl lg:text-8xl break-words">НАШИ РАБОТЫ</h2>
+            <div class="section-header">
+                <h2 ref="title" class="section-title">НАШИ РАБОТЫ</h2>
+                <p class="section-subtitle">
+                    Реальные результаты восстановления и защитной обработки автомобилей
+                </p>
+            </div>
             <div ref="slider" class="max-w-5xl mx-auto">
                 <BeforeAfterSlider v-for="(work, index) in works" :key="index" :before-image="work.before"
                     :after-image="work.after" :title="work.title" />
             </div>
 
             <div class="text-center mt-12">
-                <a href="https://vk.ru/club241937554" target="_blank" rel="noopener noreferrer"
+                <a href="https://vk.com/club241937554" target="_blank" rel="noopener noreferrer"
                     class="btn-primary inline-flex items-center gap-2">
                     Смотреть все работы в VK
                     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
